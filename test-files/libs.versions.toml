@@ -1,0 +1,10 @@
+[versions]
+myversion = "1.4"
+
+
+[libraries]
+my-lib1 = "com.mycompany:mylib:1.4"
+my-lib2 = { module = "com.mycompany:mylib", version = "1.4" }
+my-lib3 = { group = "com.mycompany", name = "mylib", version = "1.4" }
+#my-lib4 = { group = "com.mycompany", name = "mylib", version = { require = "1.4" } }
+my-lib5 = { group = "com.mycompany", name = "mylib", version.ref = "myversion" }
