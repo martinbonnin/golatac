@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "net.mbonnin.golatac"
-version = "0.0.1"
+version = "0.0.2"
 
 repositories {
   mavenCentral()
@@ -69,6 +69,14 @@ project.publishing.apply {
 
         configurePublication(this)
       }
+      getByName("golatacPluginMarkerMaven") {
+        this as MavenPublication
+
+//        artifact(project.tasks.named("emptyJavadocJar"))
+//        artifact(project.tasks.named("kotlinSourcesJar"))
+
+        configurePublication(this)
+      }
     }
   }
 }
@@ -81,12 +89,12 @@ fun configurePublication(mavenPublication: MavenPublication) {
     val lPomName = lArtifactId
     val lPomDescription = lArtifactId
     val lPomAuthors = "golatac authors"
-    val lGithubRepository = "https://github.com/martinbonnin/golatac"
+    val lGithubRepository = "martinbonnin/golatac"
     val lGithubLicensePath = "blob/main/LICENSE"
 
-    artifactId = lArtifactId
-    groupId = lGroupId
-    version = lVersion
+//    artifactId = lArtifactId
+//    groupId = lGroupId
+//    version = lVersion
 
     pom {
       name.set(lPomName)
